@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/Algorithm" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="desc">desc: </label>
+            <input type="text" name="desc">
+            <label for="title">title: </label>
+            <input type="text" name="title">
+            
+        </div>
+        <input type="submit" value="Add">
+    </form>
+    <br>
+    <h1>All the Algorithm</h1>
+    <table>
+        <tr>
+            <th>created_by</th>
+            <th>title</th>
+            <th>desc</th>
+        </tr>
+        {%for Z in algos%}
+            <tr>
+                <td>{{Z.created_by.first_name}}</td>
+                <td>{{Z.title}}</td>
+                <td>{{Z.desc}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

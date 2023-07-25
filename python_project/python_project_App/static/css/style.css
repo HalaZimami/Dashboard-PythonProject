@@ -1,0 +1,386 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1% 2%;
+    font-family: Stencil Std, fantasy;
+    box-shadow: 0px 0px 6px 4px #dbd8e3;
+    z-index: 4;
+}
+.header-wlcm{
+    display: flex;
+    align-items: center;
+    padding: 1% 2%;
+    font-family: Stencil Std, fantasy;
+}
+.span-logo {
+    background-color: #f67280;
+}
+.content-wlcm{
+    margin: 10% auto;
+    width: 80%;
+    display: flex;
+    align-items: stretch;
+}
+.left{
+    width: 50%;
+    margin-top: 4%;
+}
+.right{
+    width: 50%;
+}
+.cont {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.row1 {
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.row2 {
+    flex-grow: 8;
+    background-color: #dde3f3;
+    padding: 2%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dashbord {
+    background-color: #626fe6;
+    padding: 5% 6%;
+    margin: 5% 0%;
+    border-radius: 4px;
+    color: white;
+}
+
+.nav-content {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    top: -588px;
+    right: 18px;
+}
+
+.nav {
+    color: #83868f;
+    padding: 5% 6%;
+    margin: 5% 9%;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.nav:hover {
+    background-color: #626fe6;
+    padding: 5% 6%;
+    margin: 5% 9%;
+    border-radius: 4px;
+    color: white;
+}
+
+.r-row2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.col1-1 {
+    flex-grow: 2;
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    border: 1px solid black;
+    text-align: center;
+}
+.card-name{
+    font-weight: bold;
+    font-family: OCR A Std, monospace;
+    color: white;
+    font-size: 20px;
+    margin: 10% auto;
+}
+
+.col1-2 {
+    flex-grow: 2;
+    margin: 1%;
+}
+
+.card {
+    margin: 3%;
+    padding: 3%;
+    width: 40%;
+    display: grid;
+    grid-template-rows: 20px 50px 1fr 50px;
+    border-radius: 15px;
+    border: none;
+    transition: all 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+}
+
+.note {
+    background: #8594e4;
+}
+
+.file {
+    background: #a5bdfd;
+}
+
+.img {
+    background: #626fe6;
+}
+
+.alg {
+    background: #dd5e89;
+}
+
+.cloud {
+    margin: auto;
+    width: 90%;
+    height: 320px;
+    border-radius: 20px;
+}
+
+.r-row3 {
+    display: flex;
+    align-items: center;
+    width: 100%
+}
+
+.col2-1 {
+    width: 33%;
+    margin: 1%;
+    border-radius: 15px;
+    background-color: white;
+    height: 450px;
+}
+
+.col2-2 {
+    width: 250px;
+    margin: 1%;
+    border-radius: 15px;
+    height: 450px;
+}
+
+.col2-3 {
+    width: 33%;
+    margin: 1%;
+    border-radius: 15px;
+    background-color: white;
+    height: 450px;
+}
+.col2-4 {
+    width: 402px;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: white;
+    height: 450px;
+}
+
+.charts {
+    width: 230px;
+    height: 265px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.time {
+    width: 230px;
+    margin: 12% 0%;
+    height: 150px;
+    background-image: linear-gradient(180deg, #1551b9 0%, #dd5e89 100%);
+    border-radius: 15px;
+}
+.time-display{
+    position: relative;
+    right: -6%;
+    bottom: -35%;
+    color: white;
+    font-size: 35px;
+}
+.r-row4 {
+    display: flex;
+    align-items: center;
+    width: 100%
+}
+
+.col3-1 {
+    width: 60%;
+    margin: 1%;
+    background-color: white;
+    border-radius: 15px;
+    height: 450px;
+}
+.title-top{
+    margin: 2% 1%;
+}
+
+.col3-2 {
+    width: 395px;
+    margin: 1%;
+    background-color: white;
+    border-radius: 15px;
+    height: 450px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.mySlides1,
+.mySlides2 {
+    display: none
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover,
+.next:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+.game-name{
+    text-align: center;
+    font-weight: bold;
+    margin: 1% 0px;
+    font-size: 20px;
+}
+.game{
+    border-radius: 15px;
+}
+.scroll{
+        padding: 15px;
+        width: 100%;
+        height: 330px;
+        overflow: scroll;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+}
+.scroll1{
+    padding: 15px;
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+.to-do-list-btn{
+    text-align: center;
+    border: 1px solid #626fe6;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    color: #626fe6;
+    font-weight: bold;
+}
+.to-do-list-btn:hover{
+    background-color:#626fe6;
+    color: white;
+}
+.submit{
+    text-align: center;
+    border: 1px solid #626fe6;
+    background-color: transparent;
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    color: #626fe6;
+    font-weight: bold;
+    margin: 1%;
+}
+.submit:hover{
+    background-color:#626fe6;
+    color: white;
+}
+.to-do-list-input{
+    width: 88%;
+    border-radius: 10px;
+    border: 1px solid rgb(206, 206, 206);
+    height: 35px;
+    padding: 3%;
+}
+.do-list{
+    margin: 4% 0%;
+}
+.chartt{
+    font-weight: bold;
+}
+.dot{
+color: #626fe6;
+}
+.chart{
+    border: 1px solid rgb(224, 219, 219);
+    width: 90%;
+    height: 200px;
+    position: relative;
+    left: 4%;
+    border-radius: 15px;
+}
+.post{
+    border: 1px solid rgb(224, 219, 219);
+    border-radius: 10px;
+    margin: 3%;
+    padding: 2%;
+    position: relative;
+}
+.content{
+    color: black;
+}

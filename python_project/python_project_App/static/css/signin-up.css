@@ -1,0 +1,37 @@
+
+.cont{
+    width: 40%;
+    margin: 6% auto;
+    background-color: #ebeef7;
+    border-radius: 15px;
+    box-shadow: 0px 1px 4px 0px rgb(200, 196, 196);
+}
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1% 2%;
+    font-family: Stencil Std, fantasy;
+    margin: 1% 22%;
+}
+.span-logo {
+    background-color: #f67280;
+}
+.row{
+    margin: 4%;
+}
+.submit{
+    text-align: center;
+    border: 1px solid #626fe6;
+    background-color: transparent;
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    color: #626fe6;
+    font-weight: bold;
+    margin: 4% auto;
+}
+.submit:hover{
+    background-color:#626fe6;
+    color: white;
+}

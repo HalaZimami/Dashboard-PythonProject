@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Play-ground</title>
+        <style>
+ h1{
+    text-align: center;
+}
+
+.continaor{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: black 2px;
+
+}
+
+.box{
+   align-items: center;
+background-color: aqua;
+height: 100px;
+width: 100px;
+margin: 5px;
+
+  
+}
+
+</style>
+
+    </head>
+    <body>
+            <h1>welcome:)</h1>
+            <div class="continaor">
+            {%for number in range(3):%}
+            <div class="box"></div>
+        {%endfor%}
+    </div>
+
+    </body>
+</html>

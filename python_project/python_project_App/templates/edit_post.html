@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit post</title>
+</head>
+<body>
+            <h3>Sucess ! Welcome , {{users.first_name}}!</h3>
+            <a href="logout" style="float: right; ">Log Out</a>
+        <p style="color: green;">Successfully registered or (logged) in !</p>
+        <hr>
+        {%if posts_id.user.id == request.session.loggedIn %}
+        <form action="/update/{{posts_id.id}}" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="title">title: </label>
+                <input type="text" name="title" value="{{posts_id.title}}">  
+                <label for="content">content: </label>
+                <input type="text" name="content" value="{{posts_id.content}}"> 
+            </div>
+            <input type="submit" value="update">
+        </form>
+        <hr>
+        <a href="/edit/{{post.id}}/delete" > delete</a>
+
+        {% else %}
+                    <p>title: {{posts_id.title}}</p>
+                    <p>content: {{posts_id.content}}</p>
+                    {% endif %}
+
+
+
+        </body>
+</html>

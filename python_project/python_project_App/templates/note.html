@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h3>Sucess ! Welcome , {{users.first_name}}!</h3>
+            <a href="logout" style="float: right; ">Log Out</a>
+        </div>
+        <p style="color: green;">Successfully registered or (logged) in !</p>
+        <hr>
+        <div>
+    <div>
+        <h1>All the notes</h1>
+        <table>
+            <tr>
+                <th>title</th>
+                <th>content</th>
+                <th>name</th>
+                <th>action</th>
+            </tr>
+            {% for n in users.my_note.all %}
+                <tr>
+                    <td>{{n.title}}</td>
+                    <td>{{n.content}}</td>
+                    <td>{{n.user.first_name}}</td>
+                    <td><a href='/change/{{n.id}}'>edit</a> or <a href='/remove/{{n.id}}'>remove</a></td>
+                </tr>
+            {%endfor%}
+        </table>
+
+    </div>
+    <br>
+    <div>
+        <form action="/addnote" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="title">title: </label>
+                <input type="text" name="title">
+                <label for="content">content: </label>
+                <input type="text" name="content">
+            </div>
+            <input type="submit" value="Add">
+        </form>
+
+    </body>
+    </html>

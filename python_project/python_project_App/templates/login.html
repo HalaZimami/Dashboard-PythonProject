@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="signin-up.css">
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'css/signin-up.css' %}">
+
+
+    <title>Signup</title>
+</head>
+
+
+            <form action="/login" method="POST" id="seconedForm">
+                {% csrf_token %%}
+
+                <body>
+                    <div class="cont">
+                        <div class="header-1 row">
+                            <div class="header">
+                                <img width="20%" src="{% static 'img/hand.png' %}" alt="logo">
+                                <h3 style="font-size:40px ; font-weight:bold ;" class="span-name">CODE.<span class="span-logo">E</span>
+                                </h3>
+                            </div>
+                        </div>
+                
+                        <div class="form row">
+                            {% if messages %}
+<ul class="messages"  style="color: red;">
+    {% for message in messages %}
+    <li >{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+                            <div class="input-group mb-3">
+                                
+                                <input type="email" class="form-control email" placeholder="Email" aria-label="Recipient's email"
+                                    aria-describedby="basic-addon2" name="email" >
+                                <span class="input-group-text" id="basic-addon2">@example.com</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control password" placeholder="Paswword" aria-label="Recipient's password"
+                                    aria-describedby="basic-addon2"  name="password">
+                                </div>
+                                <input type="submit" class="submit" value="Login">
+                        </div>
+                    </div>
+
+            </form>
+            
+            
+            </body>
+            
+            </html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/scripts.bundle.js"></script>
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'css/style.css' %}">
+
+</head>
+<body>
+        <div class="header">
+            <img width="3%" src="{% static 'img/hand.png' %}" alt="logo">
+            <h3 style="font-size:30px ; font-weight:bold ;" class="span-name">CODE.<span class="span-logo">E</span></h3>
+        </div>
+    
+        <div class="cont">
+            <div class="rows row1">
+                <div class="nav-content">
+                    <ul>
+                        <div class="r-row2">
+                            <h5> Welcome, {{users.first_name}}!</h5>
+                        </div>
+                        <a href="/dashboard">
+                            <div class="dashbord"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z" />
+                                </svg>&nbsp;&nbsp;Dashboard</div>
+                        </a>
+                        <a href="/profile">
+                            <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                    <path
+                                        d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
+                                </svg>&nbsp;&nbsp;Profile</div>
+                        </a>
+                        <a href="/posts">
+                            <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>&nbsp;&nbsp;Timeline</div>
+                        </a>
+                        <a href="/logout"> 
+                            <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                                    <path fill-rule="evenodd"
+                                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                                </svg>&nbsp;&nbsp;Logout</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="rows row2">
+                <div class="r-row2">
+                    <div class="col1 col1-1">
+                        <div class="card note">
+                            <a href="/note">
+                                <h3 class="card-name">My notes <br><br><span class="card-icn"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                            class="bi bi-journal-bookmark" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
+                                            <path
+                                                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                            <path
+                                                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                        </svg></span></h3>
+                            </a>
+                        </div>
+                        <div class="card file">
+                            <a href="/files">
+                                <h3 class="card-name">My files <br><br><span class="card-icn"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                            class="bi bi-file-earmark-zip" viewBox="0 0 16 16">
+                                            <path
+                                                d="M5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.11 0l-.929-.62a1 1 0 0 1-.415-1.074L5 8.438V7.5zm2 0H6v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.929-.62-.4-1.598A1 1 0 0 1 7 8.438V7.5z" />
+                                            <path
+                                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1h-2v1h-1v1h1v1h-1v1h1v1H6V5H5V4h1V3H5V2h1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                                        </svg></span></h3>
+                            </a>
+                        </div>
+                        <div class="card img">
+                            <a href="/image">
+                                <h3 class="card-name">My images <br><br><span class="card-icn"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                            class="bi bi-file-image" viewBox="0 0 16 16">
+                                            <path d="M8.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path
+                                                d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8l-2.083-2.083a.5.5 0 0 0-.76.063L8 11 5.835 9.7a.5.5 0 0 0-.611.076L3 12V2z" />
+                                        </svg></span></h3>
+                            </a>
+                        </div>
+                        <div class="card alg">
+                            <a href="/algo">
+                                <h3 class="card-name">Daily algorithm <br><br><span class="card-icn"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                            class="bi bi-file-earmark-code" viewBox="0 0 16 16">
+                                            <path
+                                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                                            <path
+                                                d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                                        </svg></span></h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col1 col1-2">
+                        <img src="{% static 'img/bot.png' %}" class="cloud" alt="" height="10px" width="10px">
+                    </div>
+                </div>
+                <div class="row r-row3">
+                    <div class="col2 col2-4">
+                        <h5 class="title-top">Last posts</h5>
+                        <div class="posts scroll1">
+                            {%for Z in posts%}
+                            <div class="post post1">
+                                <h6><img width="10%" src="{% static 'img/youth.png' %}" alt="profile"> {{Z.user.first_name}}</h6>
+                                <a href="/comment/{{Z.id}}">
+                                    <div class="content">
+                                        {{Z.content}}
+                                    </div>
+                                </a>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                    <div class="col2 col2-2">
+                        <div class="charts">
+                            <h5 class="title-top" style="padding: 2%;">Charts</h5>
+                            <div class="chart">
+                                <p class="n chartt"><span class="dot"><svg xmlns="http://www.w3.org/2000/svg" width="35"
+                                            height="35" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                        </svg></span> {{note_count}} Notes</p>
+                                <p class="f chartt"><span class="dot"><svg xmlns="http://www.w3.org/2000/svg" width="35"
+                                            height="35" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                        </svg></span>{{file_count}} Files</p>
+                                <p class="i chartt"><span class="dot"><svg xmlns="http://www.w3.org/2000/svg" width="35"
+                                            height="35" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                        </svg></span>{{Image_count}} Images</p>
+                                <p class="a chartt"><span class="dot"><svg xmlns="http://www.w3.org/2000/svg" width="35"
+                                            height="35" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                        </svg></span>{{Algorithm_count}} Algorithms</p>
+                            </div>
+                        </div>
+                        <div class="time">
+                            <h5 class="title-top time-display"> <time>
+                                    <div id="clock">
+                                        <h1 id="date-time">
+                                </time> </h1>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col2 col2-4">
+                        <h5 class="title-top">My posts</h5>
+                        <div class="posts scroll1">
+                            {%for Z in user_posts%}
+                            <div class="post post1">
+                                <h6><img width="10%" src="{% static 'img/man.png' %}" alt="profile"> {{Z.user.first_name}}</h6>
+                                <a href="">
+                                    <div class="content">
+                                        {{Z.content}}
+                                    </div>
+                                </a>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+                <div class="row r-row4">
+                    <div class="col3 col3-1">
+                        <h5 class="title-top">Coding Games!</h5>
+                        <div class="slideshow-container">
+                            <div class="mySlides1">
+                                <a href="https://www.tynker.com/"><img class="game" src="{% static 'img/games/Tynker.png' %}" height="285px
+                                        style=" width:100%"></a>
+                                <p class="game-name">Tynker Game</p>
+                            </div>
+    
+                            <div class="mySlides1">
+                                <a href="https://checkio.org/"><img class="game" src="{% static 'img/games/CheckiO.png' %}" height="280px
+                                        style=" width:100%"></a>
+                                <p class="game-name">CheckiO Game</p>
+                            </div>
+    
+                            <div class="mySlides1">
+                                <a href="https://flexboxfroggy.com/#ar"><img class="game" src="{% static 'img/games/Flexbox-Froggy.png' %}"
+                                        height="320px
+                                        style=" width:100%"></a>
+                                <p class="game-name">Flexbox Froggy Game</p>
+                            </div>
+    
+                            <div class="mySlides1">
+                                <a href="https://cssgridgarden.com/#ar"><img class="game" src="{% static 'img/games/Grid-Garden.png' %}"
+                                        height="310px
+                                        style=" width:100%"></a>
+                                <p class="game-name">Grid Garden Game</p>
+                            </div>
+    
+                            <div class="mySlides1">
+                                <a href="https://flukeout.github.io/"><img class="game" src="{% static 'img/games/css-dinner.png' %}" height="305px
+                                        style=" width:100%"></a>
+                                <p class="game-name">Css Dinner Game</p>
+                            </div>
+    
+                            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                        </div>
+    
+                    </div>
+                    <div class="col3 col3-2">
+                        <h5 class="title-top">To do list</h5>
+                        <div class="scroll">
+                            {%for td in todos.all%}
+                                <a href="/delete/{{td.id}}" style="
+                                    text-decoration:none;
+                                    color: black;
+                                ">
+                                    <input type="checkbox" id="1" name="checkbox1">
+                                </a>
+                                <label for="1"> {{td.todo}}</label><br>
+                            <br>
+                            {%endfor%}
+                        </div>
+                        <form action="/add_todo" method="post">
+                            {% csrf_token %}
+                        <input type="text" class="to-do-list-input do-list" name="todo"
+                            placeholder="Add your tasks here">&nbsp<input type="submit" value="+"
+                            class="to-do-list-btn do-list">
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="script.js"></script>
+        <script>
+            setInterval(showTime, 1000);
+            function showTime() {
+                let time = new Date();
+                let hour = time.getHours();
+                let min = time.getMinutes();
+                let sec = time.getSeconds();
+                am_pm = "AM";
+    
+                if (hour > 12) {
+                    hour -= 12;
+                    am_pm = "PM";
+                }
+                if (hour == 0) {
+                    hr = 12;
+                    am_pm = "AM";
+                }
+    
+                hour = hour < 10 ? "0" + hour : hour;
+                min = min < 10 ? "0" + min : min;
+                sec = sec < 10 ? "0" + sec : sec;
+    
+                let currentTime = hour + ":"
+                    + min + ":" + sec + am_pm;
+    
+                document.getElementById("clock")
+                    .innerHTML = currentTime;
+            }
+    
+            showTime();
+        </script>
+    
+    </body>
+    
+    </html>

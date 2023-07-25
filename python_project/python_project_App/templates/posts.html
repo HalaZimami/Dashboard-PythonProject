@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+            <h3>Sucess ! Welcome , {{users.first_name}}!</h3>
+            <a href="logout" style="float: right; ">Log Out</a>
+        </div>
+        <p style="color: green;">Successfully registered or (logged) in !</p>
+        <hr>
+        <form action="/addpost" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="title">title: </label>
+                <input type="text" name="title">
+                <label for="content">content: </label>
+                <input type="text" name="content">
+                
+            </div>
+            <input type="submit" value="Add">
+        </form>
+        <br>
+        <h1>All the posts</h1>
+        <table>
+            <tr>
+                <th>title</th>
+                <th>content</th>
+                <th>user</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                <th>edit</th>
+
+            </tr>
+            {%for Z in posts%}
+                <tr>
+                    <td><a href="comment/{{Z.id}}">{{Z.title}}</a></td>
+                    <td>{{Z.content}}</td>
+                    <td>{{Z.user.first_name}}</td>
+                    <td>{{Z.created_at}}</td>
+                    <td>{{Z.updated_at}}</td>
+                    <td><a href="/edit/{{Z.id}}">edit</a></td>
+                </tr>
+            {%endfor%}
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>

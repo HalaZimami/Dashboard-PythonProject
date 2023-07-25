@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+	<title>upload_image</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="py-5 text-center bg-success text-white">
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form }}
+				<button class="btn btn-warning" type="submit">Upload</button>
+			</form>
+		</div>
+		<div class="row">
+			{% for x in img %}
+			<div class="col-sm-3">
+				<div class="card m-2">
+					<img src="{{x.photo.url}}" alt="" class="card-img-top" height="200px">
+					<form method="post" action="{% url 'delete_image' x.id %}">
+						{% csrf_token %}
+						<button type="submit" class="btn btn-danger btn-sm">Delete</button>
+					  </form>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		
+	</div>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.js' %}"></script>
+</body>
+
+</html>
